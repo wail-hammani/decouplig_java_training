@@ -27,7 +27,7 @@ public class Simulation {
         Long number = player.askNextGuess();
         if(number.equals(numberToGuess))
         {
-            logger.log("Felicitation Vous avez gagner Age du capitaine : "+numberToGuess);
+            logger.log("Felicitation Vous avez win Age du capitaine : "+numberToGuess);
             return true;
         }
         else
@@ -41,6 +41,7 @@ public class Simulation {
     }
 
     public void loopUntilPlayerSucceed(long max) {
+        logger.log("Debut de la partie");
         boolean test=nextRound();
         int i=0;
         long Start=System.currentTimeMillis();

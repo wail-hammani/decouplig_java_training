@@ -5,10 +5,11 @@ import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 
 public class ContextualLogger implements Logger{
-    Logger delegateLogger;
     String callerClass;
+    Logger delegateLogger;
 
-    public ContextualLogger(Logger delegateLogger, String callerClass) {
+
+    public ContextualLogger(String callerClass,Logger delegateLogger) {
         this.delegateLogger = delegateLogger;
         this.callerClass = callerClass;
     }
