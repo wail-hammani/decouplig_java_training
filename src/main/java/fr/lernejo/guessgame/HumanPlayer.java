@@ -16,10 +16,10 @@ public class HumanPlayer implements Player{
 
     @Override
     public void respond(boolean lowerOrGreater) {
-    if(lowerOrGreater)
-        logger.log("Plus Grand");
-    else
-        logger.log("Plus Petit ");
+        if(lowerOrGreater)
+            logger.log("Plus Grand");
+        else
+            logger.log("Plus Petit ");
 
     }
 }

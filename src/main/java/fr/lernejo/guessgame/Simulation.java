@@ -26,10 +26,10 @@ public class Simulation {
     private boolean nextRound() {
         Long number = player.askNextGuess();
         if(number.equals(numberToGuess))
-            {
-                logger.log("Felicitation Vous avez gagner Age du capitaine : "+numberToGuess);
-                return true;
-            }
+        {
+            logger.log("Felicitation Vous avez gagner Age du capitaine : "+numberToGuess);
+            return true;
+        }
         else
         {
             if (number > numberToGuess) {
@@ -40,13 +40,20 @@ public class Simulation {
         }
     }
 
-    public void loopUntilPlayerSucceed() {
+    public void loopUntilPlayerSucceed(long max) {
         boolean test=nextRound();
-            while(!test )
-            {
-                test=nextRound();
-            }
-
+        int i=0;
+        long Start=System.currentTimeMillis();
+        long End =0;
+        while(!test && i<max )
+        {
+            test=nextRound();
+            i++;
+        }
+        End=System.currentTimeMillis();
+        long TimeTotal = End-Start;
+        Timestamp timestamp=new Timestamp(TimeTotal);
+        logger.log("Temps : "+new SimpleDateFormat("mm:ss.SSS").format(timestamp));
 
 
     }
